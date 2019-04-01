@@ -1,0 +1,71 @@
+body {
+    background-image: url("../images/cyber.jpg");
+    background-size: cover;
+}
+
+.text {
+    font-size: 24px;
+    line-height: 1.25;
+}
+
+.display {
+    font-size: 28x;
+}
+
+.choice{
+    background-color: rgba(107, 106, 106, 0.74);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px 0 10px 0;
+    width: 400px;
+}
+
+.score-screen {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 0 20px 0;
+    width: 400px;
+}
+
+.points{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 0 20px 0;
+    width: 400px;
+}
+
+#container {
+    background-color: rgba(14, 13, 13, 0.918);
+    margin-top:150px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 900px;
+    height:  600px;
+    color: white;
+}
+
+#title {
+    font-size: 48px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 0 10px 0;
+    width: 488px;
+}
+
+#timer {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    width: 400px;
+}
+
+#question {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 100px;
+    width: 400px;
+}
+
