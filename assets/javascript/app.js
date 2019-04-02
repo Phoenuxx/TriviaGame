@@ -13,35 +13,35 @@ var i = 0;
 var qaList = [
 question1 = {
     q: "Which of the below is not a movie in the cyberpunk genre?",
-    a: "Mortal Engines",
-    f1: "Ready Player One",
-    f2: "Bladerunner",
-    f3: "Ghost In The Shell"
+    a: "- Mortal Engines",
+    f1: "- Ready Player One",
+    f2: "- Bladerunner",
+    f3: "- Ghost In The Shell"
 },
 
 question2 = {
     q: "Which of the below is not a general attribute of the Cyberpunk genre?",
-    a: "Fantasy",
-    f1: "Dystopia",
-    f2: "Mega-Corporations",
-    f3: "Anti-Authoritarian"
+    a: "- Magic",
+    f1: "- Dystopia",
+    f2: "- Mega-Corporations",
+    f3: "- Anti-Authoritarian"
 },
 
 question3 = {
     q: "The movie Blade Runner is based off of what book?",
-    a: "Do Androids Dream of Electric Sleep?",
-    f1: "Neuromancer",
-    f2: "The Stand",
-    f3: "Empty"
+    a: "- Do Androids Dream of Electric Sleep?",
+    f1: "- Neuromancer",
+    f2: "- The Stand",
+    f3: "- Empty"
 },
 
 
 question4 = {
     q: "Cyberpunk is a sub-genre of what major genre?",
-    a: "Science Fiction",
-    f1: "Fantasy",
-    f2: "Drama",
-    f3: "Comedy"
+    a: "- Science Fiction",
+    f1: "- Fantasy",
+    f2: "- Drama",
+    f3: "- Comedy"
 },
 
 
@@ -106,7 +106,7 @@ function questionDisplay() {
 //Correct Answer Intermission page
 function intermissionC() {
     $(".display").remove();
-    display = $("<div>").addClass("displayC").text("You got it! the right answer was- ");
+    display = $("<div>").addClass("displayC").text("You got it! the right answer was " + chosenObject.a);
     $("#question").append(display);
     time = 5;
     i++;
@@ -121,7 +121,7 @@ function intermissionC() {
 //Incorrect Answer Intermission page
 function intermissionI() {
     $(".display").remove();
-    display = $("<div>").addClass("displayI").text("Not quite, the correct answer is- ");
+    display = $("<div>").addClass("displayI").text("Not quite, the correct answer is " + chosenObject.a);
     $("#question").append(display);
     time = 5;
     i++;
@@ -137,7 +137,7 @@ function intermissionI() {
 function intermissionT() {
  
     $(".display").remove();
-    display = $("<div>").addClass("displayT").text("Oops, you ran out of time... The correct answer was- ");
+    display = $("<div>").addClass("displayT").text("Oops, you ran out of time... The correct answer was " + chosenObject.a);
     time = 5;
     i++;
     noTimePoints++;

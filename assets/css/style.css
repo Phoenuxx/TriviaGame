@@ -1,6 +1,7 @@
 body {
     background-image: url("../images/cyber.jpg");
     background-size: cover;
+    font-family: 'Share Tech Mono', monospace;
 }
 
 .text {
@@ -18,7 +19,7 @@ body {
     margin-right: auto;
     margin-top: 10px;
     margin-bottom: 10px;
-    padding: 10px 0 10px 0;
+    padding: 10px 0 10px 15px;
     width: 400px;
 }
 
