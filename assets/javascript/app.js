@@ -2,13 +2,12 @@ var time = 30;
 var winPoints = 0;
 var lossPoints = 0;
 var noTimePoints = 0;
+var i = 0;
 var chosenQuestion;
 var correctAnswer;
 var chosenObject;
-var playerGuessed = false;
 var display;
-var i = 0;
-
+var playerGuessed = false;
 
 var qaList = [
 question1 = {
@@ -78,12 +77,11 @@ function timeDecrementer() {
 //Picks a question
 function chooseQuestion() {
     chosenObject = qaList[i];
-    
+
 }
 
 //displays the question/choices
 function questionDisplay() {
-    
     playerGuessed = false;
     display = $("<div>").addClass("display text").append(chosenObject.q);
     choice1 = $("<div>").addClass("choice text").append(chosenObject.a).attr("id", "answer");
@@ -92,15 +90,12 @@ function questionDisplay() {
     choice4 = $("<div>").addClass("choice text").append(chosenObject.f3).attr("id", "false");
     $(display).append(choice1, choice2, choice3, choice4);
     $("#question").append(display);
-
     $(".displayC").remove();
     $(".displayI").remove();
     $(".displayT").remove();
-
     if (i != qaList.length) {
         time = 30;
-    }
-  
+    } 
 }
 
 //Correct Answer Intermission page
@@ -135,21 +130,17 @@ function intermissionI() {
 
 //Timeout Answer Intermission page
 function intermissionT() {
- 
     $(".display").remove();
-    display = $("<div>").addClass("displayT").text("Oops, you ran out of time... The correct answer was " + chosenObject.a);
+    display = $("<div>").addClass("displayT").text("Tsk, tsk, you've got to at least guess if you want to know the answer!");
     time = 5;
     i++;
     noTimePoints++;
     $("#question").append(display);
-    clearInterval(intervalID);
-    timer();
+    // clearInterval(intervalID);
+    // timer();
     finish();
     chooseQuestion();
-    if (i == qaList) {
-        i+ 2;
-    }
-    }
+}
 
 
 //Declares players choice and changes to intermission page
