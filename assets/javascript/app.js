@@ -63,7 +63,7 @@ function timer() {
 function timeDecrementer() {
     if (time > 0) {
     time--;
-    } 
+    }
     else if (time == 0 && playerGuessed == false) {
         playerGuessed = true;
         intermissionT();
@@ -83,6 +83,10 @@ function chooseQuestion() {
 //displays the question/choices
 function questionDisplay() {
     playerGuessed = false;
+    if (i  == 5) {
+        chosenObject.q = "testQ";
+        chosenObject.a = "testA";
+    }
     display = $("<div>").addClass("display text").append(chosenObject.q);
     choice1 = $("<div>").addClass("choice text").append(chosenObject.a).attr("id", "answer");
     choice2 = $("<div>").addClass("choice text").append(chosenObject.f1).attr("id", "false");
@@ -95,7 +99,7 @@ function questionDisplay() {
     $(".displayT").remove();
     if (i != qaList.length) {
         time = 30;
-    } 
+    }
 }
 
 //Correct Answer Intermission page
@@ -131,7 +135,7 @@ function intermissionI() {
 //Timeout Answer Intermission page
 function intermissionT() {
     $(".display").remove();
-    display = $("<div>").addClass("displayT").text("Tsk, tsk, you've got to at least guess if you want to know the answer!");
+    display = $("<div>").addClass("displayT").text("Tsk, tsk, you've got to at least guess if you want to know the answer!" + chosenObject.a);
     time = 5;
     i++;
     noTimePoints++;
@@ -145,7 +149,7 @@ function intermissionT() {
 
 //Declares players choice and changes to intermission page
 function onPlayerClick() {
-    
+
     if ($(this).attr("id") == "false") {
         console.log("incorrect");
         playerGuessed = true;
@@ -170,8 +174,8 @@ function endScreen() {
 }
 //Finish the game
 function finish() {
-    if (i > qaList.length) {
-        $(".displayC").remove();
+    if (i >= qaList.length) {
+        setTimeout(function() {  $(".displayC").remove();
         $(".displayI").remove();
         $(".displayT").remove();
         time = "You're All Done!";
@@ -180,7 +184,17 @@ function finish() {
         clearInterval(intervalID);
         console.log(winPoints);
         console.log(lossPoints);
-        console.log(noTimePoints);
+        console.log(noTimePoints);}, 5000)
+        // $(".displayC").remove();
+        // $(".displayI").remove();
+        // $(".displayT").remove();
+        // time = "You're All Done!";
+        // noTimePoints--;
+        // endScreen();
+        // clearInterval(intervalID);
+        // console.log(winPoints);
+        // console.log(lossPoints);
+        // console.log(noTimePoints);
 
     }
     // clearInterval(intervalID);
