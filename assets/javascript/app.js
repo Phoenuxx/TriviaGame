@@ -135,7 +135,7 @@ function intermissionI() {
 //Timeout Answer Intermission page
 function intermissionT() {
     $(".display").remove();
-    display = $("<div>").addClass("displayT").text("Tsk, tsk, you've got to at least guess if you want to know the answer!" + chosenObject.a);
+    display = $("<div>").addClass("displayT").text("Oh no! You ran out of time...! The answer was " + chosenObject.a);
     time = 5;
     i++;
     noTimePoints++;
