@@ -1,4 +1,4 @@
-var time = 30;
+var time;
 var winPoints = 0;
 var lossPoints = 0;
 var noTimePoints = 0;
@@ -140,8 +140,6 @@ function intermissionT() {
     i++;
     noTimePoints++;
     $("#question").append(display);
-    // clearInterval(intervalID);
-    // timer();
     finish();
     chooseQuestion();
 }
@@ -179,25 +177,15 @@ function finish() {
         $(".displayI").remove();
         $(".displayT").remove();
         time = "You're All Done!";
-        noTimePoints--;
+        // noTimePoints--;
         endScreen();
         clearInterval(intervalID);
         console.log(winPoints);
         console.log(lossPoints);
         console.log(noTimePoints);}, 5000)
-        // $(".displayC").remove();
-        // $(".displayI").remove();
-        // $(".displayT").remove();
-        // time = "You're All Done!";
-        // noTimePoints--;
-        // endScreen();
-        // clearInterval(intervalID);
-        // console.log(winPoints);
-        // console.log(lossPoints);
-        // console.log(noTimePoints);
+
 
     }
-    // clearInterval(intervalID);
 }
 
 // STARTER FUNCTION CALLS
